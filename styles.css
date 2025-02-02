@@ -253,7 +253,7 @@ h1 {
     }
 
     h1 {
-    font-size: 3.8rem;
+    font-size: 3.3rem;
     text-align: center;
     padding-bottom: 5px;
     }
@@ -264,6 +264,8 @@ h1 {
 
     .site-name2 {
     display: block;
+    margin: auto 0;
+        
     }
 
     .date-time {
