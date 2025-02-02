@@ -12,6 +12,8 @@
     --accent-color: #FF4DA6;
     /* Bright pink */
     --shadow-color: rgba(255, 20, 147, 0.2);
+
+    --shadow-color2: rgba(204, 157, 16, 0.941);
 }
 
 * {
@@ -47,6 +49,16 @@ h1 {
 
 .site-name2 {
     display: none;
+}
+
+.reset h1{
+    margin-bottom: 0px;
+    margin-top: 15px ;
+    padding-bottom: 0px;
+
+}
+.reset h1:hover {
+    text-shadow: 0px 0px 22px var(--shadow-color2);
 }
 
 .date-time {
@@ -193,7 +205,6 @@ h1 {
 }
 
 .copy p {
-    text-align: center;
     font-size: 1.25em;
     color: var(--primary-color);
     /*font-weight: bold;*/

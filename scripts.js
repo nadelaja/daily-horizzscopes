@@ -4,6 +4,13 @@ const zodiacSigns = [
     "Sagittarius", "Capricorn", "Aquarius", "Pisces"
 ];
 
+const zodiacDates = [
+    "Aries", "Taurus", "Gemini", "Cancer",
+    "Leo", "Virgo", "Libra", "Scorpio",
+    "Sagittarius", "Capricorn", "Aquarius", "Pisces"
+];
+
+
 async function loadHoroscopes() {
     try {
         const response = await fetch('horoscopes.json');
@@ -39,7 +46,7 @@ async function getDailyHoroscopes() {
         const horoscope = getRandomMessage(horoscopes, usedMessages, seed + index);
         usedMessages.push(horoscope.id);
         return {
-            sign,
+            sign,            
             message: horoscope.message,
             theme: horoscope.theme,
             intensity: horoscope.intensity
@@ -122,4 +129,4 @@ window.onscroll = function () {
 // Scroll to the top when the button is clicked
 backTo.onclick = function () {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-};
+}; 
