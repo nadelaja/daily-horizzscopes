@@ -262,6 +262,10 @@ h1 {
     display: none;
     }
 
+    .site-name2 {
+    display: block;
+    }
+
     .date-time {
     width: 60%;
     }
