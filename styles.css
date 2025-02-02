@@ -265,6 +265,7 @@ h1 {
     .site-name2 {
     display: inline-block;
     margin: auto 0;
+    font-size: 2em;
     }
 
     .date-time {
