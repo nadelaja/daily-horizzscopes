@@ -110,3 +110,16 @@ setInterval(() => {
         updateDate();
     }
 }, 1000);
+
+// Scroll to top button
+let backTo = document.getElementById("backToTop");
+
+// Show/hide the button when scrolling
+window.onscroll = function () {
+    backTo.style.display = (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) ? "block" : "none";
+};
+
+// Scroll to the top when the button is clicked
+backTo.onclick = function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+};
