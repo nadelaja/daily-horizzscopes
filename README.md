@@ -1,2 +1,1 @@
-# happy-horoscopea
- positive horoscopes always!
+# horizzscopes
