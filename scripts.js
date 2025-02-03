@@ -69,17 +69,19 @@ function updateCountdown() {
         `${hours}h ${minutes}m ${seconds}s`;
 }
 
-async function renderHoroscopes() {
-    const horoscopes = await getDailyHoroscopes();
-    const grid = document.getElementById('horoscopeGrid');
+let currentHoroscopes = [];
 
-    if (horoscopes.length === 0) {
-        grid.innerHTML = '<div class="loading">Unable to load horoscopes. Please try again later!</div>';
-        return;
-    }
+        async function renderHoroscopes() {
+            currentHoroscopes = await getDailyHoroscopes();
+            const grid = document.getElementById('horoscopeGrid');
+            
+            if (currentHoroscopes.length === 0) {
+                grid.innerHTML = '<div class="loading">Unable to load horoscopes. Please try again later!</div>';
+                return;
+            }
 
-    grid.innerHTML = horoscopes.map(({ sign, message, theme }) => `
-                <div class="horoscope-card">
+            grid.innerHTML = currentHoroscopes.map(({ sign, message, theme }) => `
+                <div class="horoscope-card" data-sign="${sign}">
                     <div class="sign-container">
                         <div class="sign">${sign}</div>
                         <div class="sign-image">
@@ -90,33 +92,60 @@ async function renderHoroscopes() {
                     <div class="message">${message}</div>
                 </div>
             `).join('');
-}
+        }
 
-function updateDate() {
-    const date = new Date();
-    const month = date.toLocaleString('default', { month: 'long' });
-    const day = date.getDate();
-    const year = date.getFullYear();
+        async function refreshSelectedHoroscope() {
+            const selectedSign = document.getElementById('signSelect').value;
+            if (!selectedSign) {
+                alert('Please select a zodiac sign');
+                return;
+            }
 
-    document.getElementById('currentDate').textContent = `${month} ${day}, ${year}`;
-}
+            const horoscopes = await loadHoroscopes();
+            if (horoscopes.length === 0) return;
 
-// Initial render
-renderHoroscopes();
-updateCountdown();
-updateDate();
+            // Get a new random horoscope
+            const date = new Date();
+            const seed = date.getTime(); // Use current timestamp for true randomness
+            const usedMessages = currentHoroscopes
+                .filter(h => h.sign !== selectedSign)
+                .map(h => h.message);
 
-// Update countdown every second
-setInterval(updateCountdown, 1000);
+            const newHoroscope = getRandomMessage(horoscopes, usedMessages, seed);
 
-// Check for midnight reset
-setInterval(() => {
-    const now = new Date();
-    if (now.getHours() === 0 && now.getMinutes() === 0 && now.getSeconds() === 0) {
+            // Update the selected horoscope card
+            const card = document.querySelector(`.horoscope-card[data-sign="${selectedSign}"]`);
+            if (card) {
+                card.querySelector('.message').textContent = newHoroscope.message;
+                card.querySelector('.theme-tag').textContent = newHoroscope.theme;
+
+                // Update the currentHoroscopes array
+                const index = currentHoroscopes.findIndex(h => h.sign === selectedSign);
+                if (index !== -1) {
+                    currentHoroscopes[index] = {
+                        ...currentHoroscopes[index],
+                        message: newHoroscope.message,
+                        theme: newHoroscope.theme
+                    };
+                }
+            }
+        }
+
+        // Initial render
         renderHoroscopes();
-        updateDate();
-    }
-}, 1000);
+        updateCountdown();
+
+        // Event listeners
+        document.getElementById('refreshButton').addEventListener('click', refreshSelectedHoroscope);
+
+        // Previous interval setups remain the same
+        setInterval(updateCountdown, 1000);
+        setInterval(() => {
+            const now = new Date();
+            if (now.getHours() === 0 && now.getMinutes() === 0 && now.getSeconds() === 0) {
+                renderHoroscopes();
+            }
+        }, 1000);
 
 // Scroll to top button
 let backTo = document.getElementById("backToTop");

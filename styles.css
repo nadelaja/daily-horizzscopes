@@ -13,7 +13,7 @@
     /* Bright pink */
     --shadow-color: rgba(255, 20, 147, 0.2);
 
-    --shadow-color2: rgba(204, 157, 16, 0.941);
+    --shadow-color2: rgba(233, 202, 24, 0.941);
 }
 
 * {
@@ -51,14 +51,14 @@ h1 {
     display: none;
 }
 
-.reset h1{
+.refresh-controls h1{
     margin-bottom: 0px;
     margin-top: 15px ;
     padding-bottom: 0px;
 
 }
-.reset h1:hover {
-    text-shadow: 0px 0px 22px var(--shadow-color2);
+.refresh-controls h1:hover {
+    text-shadow: 0px 0px 60px var(--shadow-color2);
 }
 
 .date-time {
@@ -67,7 +67,6 @@ h1 {
     width: 40%;
     padding: 10px;
     margin: auto;
-
 }
 
 .update-time {
@@ -80,6 +79,35 @@ h1 {
     font-family: 'Righteous', cursive;
     color: var(--text-color);
     font-size: 1.1rem;
+}
+
+.refresh-controls {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    align-items: center;
+}
+
+.refresh-controls select {
+    padding: 10px 10px;
+    margin-top: 35px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 1.1rem;
+    color: var(--text-color);
+    background-color: var(--card-background)
+}
+
+.refresh-controls button {
+    padding: 10px 25px;
+    border-radius: 15px;
+    border: none;
+    background-color: var(--background-color);
 }
 
 .horoscope-grid {
