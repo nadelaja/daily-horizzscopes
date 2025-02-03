@@ -54,13 +54,13 @@ async function getDailyHoroscopes() {
     });
 }
 
-function updateDate() {
+/*function updateDate() {
     const date = new Date();
     const month = date.toLocaleString('default', { month: 'long' });
     const day = date.getDate();
     const year = date.getFullYear();
     document.getElementById('currentDate').textContent = `${month} ${day}, ${year}`;
-}
+}*/
 
 function updateCountdown() {
     const now = new Date();
@@ -139,12 +139,19 @@ let currentHoroscopes = [];
             }
         }
 
+function updateDate() {
+    const date = new Date();
+    const month = date.toLocaleString('default', { month: 'long' });
+    const day = date.getDate();
+    const year = date.getFullYear();
+    document.getElementById('currentDate').textContent = `${month} ${day}, ${year}`;
+}
+
+
         // Initial render
         renderHoroscopes();
         updateCountdown();
         updateDate();
-
-
 
         // Event listeners
         document.getElementById('refreshButton').addEventListener('click', refreshSelectedHoroscope);
