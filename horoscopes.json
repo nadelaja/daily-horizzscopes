@@ -68,8 +68,8 @@
         },
         {
             "id": 12,
-            "message": "Your intuition is especially strong - trust your inner voice!",
-            "theme": "intuition",
+            "message": "Lebron James 🐐 - That's it that's the whole message",
+            "theme": "culture",
             "intensity": "medium"
         },
         {
@@ -86,7 +86,7 @@
         },
         {
             "id": 15,
-            "message": "Disturbing the peace...🎶",
+            "message": "Disturbing the peace, look into my eyes~...🎶",
             "theme": "culture",
             "intensity": "high"
         },
@@ -118,7 +118,13 @@
             "id": 20,
             "message": "To our favorite lead paint connoisseur: Someone somewhere graciously spared you from the burden of intelligence, because this level of media literacy is genuinely astounding.",
             "theme": "concern",
-            "intensity": "medium"
+            "intensity": "low"
+        },
+        {
+            "id": 21,
+            "message": "It's time to take a break! These late nights and projects are getting to you and you can't keep going on like this. Take some time to recharge and get back better than every! You can't do you best work running on fumes. ",
+            "theme": "concern",
+            "intensity": "high"
         }
     ]
 }
