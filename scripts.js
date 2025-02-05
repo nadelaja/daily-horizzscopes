@@ -54,14 +54,6 @@ async function getDailyHoroscopes() {
     });
 }
 
-/*function updateDate() {
-    const date = new Date();
-    const month = date.toLocaleString('default', { month: 'long' });
-    const day = date.getDate();
-    const year = date.getFullYear();
-    document.getElementById('currentDate').textContent = `${month} ${day}, ${year}`;
-}*/
-
 function updateCountdown() {
     const now = new Date();
     const tomorrow = new Date(now);
