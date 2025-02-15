@@ -122,13 +122,13 @@
         },
         {
             "id": 21,
-            "message": "It's time to take a break! These late nights and projects are getting to you and you can't keep going on like this (You went to bed at 3am and woke uo at 6:30am). Take some time to recharge and get back better than every! You can't do you best work running on fumes.",
+            "message": "It's time to take a break! These late nights and projects are getting to you, and you can't keep going on like this (You went to bed at 3am and woke up at 6:30am). Take some time to recharge and get back better than ever! You can't do your best work running on fumes.",
             "theme": "concern",
             "intensity": "high"
         },
-                {
+        {
             "id": 22,
-            "message": "Anxiety is so silly when you really think about it, you're telling me your body can't tell the difference between ordering at a restaurant and you being robbed at gunpoint. That's rough buddy",
+            "message": "Anxiety is so silly when you really think about it, you're telling me your body can't tell the difference between ordering at a restaurant, and you being robbed at gunpoint. That's rough buddy",
             "theme": "copium",
             "intensity": "medium"
         },
@@ -138,13 +138,13 @@
             "theme": "copium",
             "intensity": "low"
         },
-                {
+        {
             "id": 24,
-            "message": "We sey a 32oz bottle of water in your future. It's been 2 days since you've had something clear and unflavored to drink and we're starting to get worried. 'There's water in the juice...please stop.'",
+            "message": "We see a 32oz bottle of water in your future. It's been 2 days since you've had something clear and unflavored to drink and we're starting to get worried. 'There's water in the juice...please stop.'",
             "theme": "concern",
             "intensity": "high"
         },
-                {
+        {
             "id": 25,
             "message": "milquetoast",
             "theme": "???",
@@ -152,7 +152,7 @@
         },
         {
             "id": 26,
-            "message": "When Johnny gives you lemmons, Mark lemonade",
+            "message": "When Johnny gives you lemons, Mark lemonade!",
             "theme": "copium",
             "intensity": "low"
         }

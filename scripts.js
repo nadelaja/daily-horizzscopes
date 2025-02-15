@@ -106,7 +106,7 @@ let currentHoroscopes = [];
 
             // Get a new random horoscope
             const date = new Date();
-            const seed = date.getTime(); // Use current timestamp for true randomness
+            const seed = date.getTime(); // Use current timestamp for 'true randomness'...
             const usedMessages = currentHoroscopes
                 .filter(h => h.sign !== selectedSign)
                 .map(h => h.message);
