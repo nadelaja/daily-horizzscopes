@@ -81,7 +81,7 @@ let currentHoroscopes = [];
             }
 
             grid.innerHTML = currentHoroscopes.map(({ sign, message, theme }) => `
-                <div class="horoscope-card" data-sign="${sign}">
+                <div class="horoscope-card" data-sign="${sign}"  id=${sign}>
                     <div class="sign-container">
                         <div class="sign">${sign}</div>
                         <div class="sign-image">
