@@ -148,12 +148,42 @@
             "id": 25,
             "message": "milquetoast",
             "theme": "???",
-            "intensity": "low"
+            "intensity": "medium"
         },
         {
             "id": 26,
             "message": "When Johnny gives you lemons, Mark lemonade!",
             "theme": "copium",
+            "intensity": "low"
+        },
+        {
+            "id": 27,
+            "message": "How did we get from 'fine shyt' to 'the huzz'? There must be something in the water and it tastes a lot like lead... ",
+            "theme": "concern",
+            "intensity": "low"
+        },
+        {
+            "id": 28,
+            "message": "Slap your mom you'll get a million dollars!",
+            "theme": "???",
+            "intensity": "low"
+        },
+        {
+            "id": 29,
+            "message": "Ma-my baby my baby my baby she says she wants to dance with the ghost she wants to leave me yuUh🎶",
+            "theme": "culture",
+            "intensity": "high"
+        },
+        {
+            "id": 30,
+            "message": "I might swerve bend that corner woooooOOOOooooah...please do not, you only have a permit",
+            "theme": "???",
+            "intensity": "low"
+        },
+        {
+            "id": 31,
+            "message": "A Labron edit a day, keeps the doctor away! Who knew the key to good health was so simple?",
+            "theme": "growth",
             "intensity": "low"
         }
     ]
