@@ -85,7 +85,7 @@ let currentHoroscopes = [];
                     <div class="sign-container">
                         <div class="sign">${sign}</div>
                         <div class="sign-image">
-                            <img src="/api/placeholder/120/120" alt="${sign} zodiac sign"/>
+                            <img src="/placeholder/120/120" alt="${sign} zodiac sign"/>
                         </div>
                         <div class="theme-tag">${theme}</div>
                     </div>
