@@ -182,9 +182,16 @@
         },
         {
             "id": 31,
-            "message": "A Labron edit a day, keeps the doctor away! Who knew the key to good health was so simple?",
+            "message": "A LeBron edit a day, keeps the doctor away! Who knew the key to good health was so simple?",
             "theme": "growth",
             "intensity": "low"
+        },
+        
+        {
+            "id": 32,
+            "message": "Daily Affirmations: I'm not chopped. I get hoes. My fits are fire. Money is on the way.",
+            "theme": "???",
+            "intensity": "high"
         }
     ]
 }
