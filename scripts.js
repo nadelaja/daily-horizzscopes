@@ -1,14 +1,40 @@
 const zodiacSigns = [
-    "Aries", "Taurus", "Gemini", "Cancer",
-    "Leo", "Virgo", "Libra", "Scorpio",
-    "Sagittarius", "Capricorn", "Aquarius", "Pisces"
+    'Aries', 'Taurus', 'Gemini', 'Cancer',
+    'Leo', 'Virgo', 'Libra', 'Scorpio',
+    'Sagittarius', 'Capricorn', 'Aquarius', 'Pisces'
 ];
 
-const zodiacDates = [
-    "Aries", "Taurus", "Gemini", "Cancer",
-    "Leo", "Virgo", "Libra", "Scorpio",
-    "Sagittarius", "Capricorn", "Aquarius", "Pisces"
-];
+const zodiacDates = {
+        Aries: 'March 21 – April 19',
+        Taurus:'April 20 – May 20',
+        Gemini: 'May 21 – June 20',
+        Cancer: 'June 21 – July 22',
+        Leo: 'July 23 – August 22',
+        Virgo: 'August 23 – September 22',
+        Libra: 'September 23 – October 22',
+        Scorpio: 'October 23 – November 21',
+        Sagittarius: 'November 22 – December 21',
+        Capricorn: 'December 22 – January 19',
+        Aquarius: 'January 20 – February 18',
+        Pisces: 'February 19 – March 20'
+};
+
+const zodiacImages = {
+    Aries: 'icons/aries-sign-zodiac-astrology-26365.svg',
+    Taurus: 'icons/taurus-sign-zodiac-astrology-26366.svg',
+    Gemini: 'icons/gemini-sign-zodiac-astrology-26367.svg',
+    Cancer: 'icons/cancer-sign-zodiac-astrology-26368.svg',
+    Leo: 'icons/leo-sign-zodiac-astrology-26369.svg',
+    Virgo: 'icons/virgo-sign-zodiac-astrology-26370.svg',
+    Libra: 'icons/libra-sign-zodiac-astrology-26371.svg',
+    Scorpio: 'icons/scorpio-sign-zodiac-astrology-26372.svg',
+    Sagittarius: 'icons/sagittarius-sign-zodiac-astrology-26373.svg',
+    Capricorn: 'icons/capricorn-sign-zodiac-astrology-26374.svg',
+    Aquarius: 'icons/aquarius-sign-zodiac-astrology-26375.svg',
+    Pisces: 'icons/pisces-sign-zodiac-astrology-26376.svg'
+};
+
+
 
 
 async function loadHoroscopes() {
@@ -84,8 +110,9 @@ let currentHoroscopes = [];
                 <div class="horoscope-card" data-sign="${sign}"  id=${sign}>
                     <div class="sign-container">
                         <div class="sign">${sign}</div>
+                        <div class="dates-tag">${zodiacDates[sign]}</div>
                         <div class="sign-image">
-                            <img src="/placeholder/120/120" alt="${sign} zodiac sign"/>
+                            <img src=" ${zodiacImages[sign] ||'/placeholder/120/120'}" alt="${sign} zodiac sign"/>
                         </div>
                         <div class="theme-tag">${theme}</div>
                     </div>
@@ -106,7 +133,7 @@ let currentHoroscopes = [];
 
             // Get a new random horoscope
             const date = new Date();
-            const seed = date.getTime(); // Use current timestamp for 'true randomness'...
+            const seed = date.getTime(); // Use current timestamp for randomness...
             const usedMessages = currentHoroscopes
                 .filter(h => h.sign !== selectedSign)
                 .map(h => h.message);

@@ -1,15 +1,15 @@
 :root {
     --primary-color: #FF1493;
     /* Deep pink */
-    --secondary-color: #FF69B4;
+    --secondary-color: #56d15c /* #FF69B4 */;
     /* Hot pink */
-    --background-color: #FFE1F0;
+    --background-color: #fecc70 /* #FFE1F0 */;
     /* Light pink */
-    --text-color: #C71585;
+    --text-color: #717ed6 /* #C71585 */;
     /* Medium violet red */
     --card-background: #ffffff;
     /* White*/
-    --accent-color: #FF4DA6;
+    --accent-color: #6ee0f3 /*#FF4DA6 */;
     /* Bright pink */
     --shadow-color: rgba(255, 20, 147, 0.2);
 
@@ -134,9 +134,9 @@ h1 {
     font-size: 1em;
     text-align: center;
     border-radius: 50%;
+    text-decoration: none;
     color: var(--card-background);
     background-color: var(--secondary-color);
-    border: var(--primary-color) solid 1px;
     box-shadow: 3px 3px 0px var(--shadow-color);
     height: 100px;
     width: 100px;
@@ -148,8 +148,8 @@ h1 {
     background-color: var(--card-background);
     border: var(--card-background);
     box-shadow: 3px 3px 0px var(--shadow-color);
-    text-shadow: 3px 3px 0px var(--shadow-color);
 }
+
 
 .horoscope-grid {
     display: grid;
@@ -193,14 +193,24 @@ h1 {
     text-shadow: 1px 1px 0px var(--shadow-color);
 }
 
+.dates-tag {
+    display: inline-block;
+    color: var(--secondary-color);
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    margin-top: 10px;
+    font-family: 'Righteous', cursive;
+}
+
 .sign-image {
     width: 120px;
     height: 120px;
     border-radius: 25px;
     overflow: hidden;
     margin: 10px auto;
-    background-color: var(--secondary-color);
-    border: 3px solid var(--primary-color);
+    /*background-color: var(--secondary-color);
+    border: 3px solid var(--primary-color);*/
 }
 
 .sign-image img {
