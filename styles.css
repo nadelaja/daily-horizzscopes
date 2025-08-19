@@ -1,5 +1,5 @@
 :root {
-    --primary-color: #FF1493;
+    --primary-color: #ff5fca; 
     /* Deep pink */
     --secondary-color: #56d15c /* #FF69B4 */;
     /* Hot pink */
@@ -13,7 +13,7 @@
     /* Bright pink */
     --shadow-color: rgba(255, 20, 147, 0.2);
 
-    --shadow-color2: rgba(233, 202, 24, 0.941);
+    --shadow-color2: #FF1493;
 }
 
 * {
@@ -41,7 +41,7 @@ header {
 
 h1 {
     font-family: 'Cherry Bomb One', cursive;
-    color: var(--primary-color);
+    color: white;
     padding-bottom: 10px;
     font-size: 3.5rem;
     margin-bottom: 15px;
@@ -233,7 +233,7 @@ h1 {
 .theme-tag {
     display: inline-block;
     background-color: var(--secondary-color);
-    color: white;
+    color: #ffffff;
     padding: 5px 12px;
     border-radius: 15px;
     font-size: 0.9rem;
@@ -287,21 +287,22 @@ h1 {
 
 .copy p {
     font-size: 1.25em;
-    color: var(--primary-color);
+    color: #ffffff;
     /*font-weight: bold;*/
 }
 
-.copy a {
+a{
     text-decoration: underline;
+    text-decoration-thickness: 2px;
     color: var(--primary-color);
 }
 
-.copy a:hover {
+a:hover {
     text-decoration: none;  
-    background-color: #ffffff;
 }
 
 .flower-footer{
+    color: #ffffff;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;

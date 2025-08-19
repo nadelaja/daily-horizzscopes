@@ -5,18 +5,18 @@ const zodiacSigns = [
 ];
 
 const zodiacDates = {
-        Aries: 'March 21 – April 19',
-        Taurus:'April 20 – May 20',
-        Gemini: 'May 21 – June 20',
-        Cancer: 'June 21 – July 22',
-        Leo: 'July 23 – August 22',
-        Virgo: 'August 23 – September 22',
-        Libra: 'September 23 – October 22',
-        Scorpio: 'October 23 – November 21',
-        Sagittarius: 'November 22 – December 21',
-        Capricorn: 'December 22 – January 19',
-        Aquarius: 'January 20 – February 18',
-        Pisces: 'February 19 – March 20'
+    Aries: 'March 21 – April 19',
+    Taurus: 'April 20 – May 20',
+    Gemini: 'May 21 – June 20',
+    Cancer: 'June 21 – July 22',
+    Leo: 'July 23 – August 22',
+    Virgo: 'August 23 – September 22',
+    Libra: 'September 23 – October 22',
+    Scorpio: 'October 23 – November 21',
+    Sagittarius: 'November 22 – December 21',
+    Capricorn: 'December 22 – January 19',
+    Aquarius: 'January 20 – February 18',
+    Pisces: 'February 19 – March 20'
 };
 
 const zodiacImages = {
@@ -33,8 +33,6 @@ const zodiacImages = {
     Aquarius: 'icons/aquarius-sign-zodiac-astrology-26375.svg',
     Pisces: 'icons/pisces-sign-zodiac-astrology-26376.svg'
 };
-
-
 
 
 async function loadHoroscopes() {
@@ -72,7 +70,7 @@ async function getDailyHoroscopes() {
         const horoscope = getRandomMessage(horoscopes, usedMessages, seed + index);
         usedMessages.push(horoscope.id);
         return {
-            sign,            
+            sign,
             message: horoscope.message,
             theme: horoscope.theme,
             intensity: horoscope.intensity
@@ -97,66 +95,66 @@ function updateCountdown() {
 
 let currentHoroscopes = [];
 
-        async function renderHoroscopes() {
-            currentHoroscopes = await getDailyHoroscopes();
-            const grid = document.getElementById('horoscopeGrid');
-            
-            if (currentHoroscopes.length === 0) {
-                grid.innerHTML = '<div class="loading">Unable to load horoscopes. Please try again later!</div>';
-                return;
-            }
+async function renderHoroscopes() {
+    currentHoroscopes = await getDailyHoroscopes();
+    const grid = document.getElementById('horoscopeGrid');
 
-            grid.innerHTML = currentHoroscopes.map(({ sign, message, theme }) => `
+    if (currentHoroscopes.length === 0) {
+        grid.innerHTML = '<div class="loading">Unable to load horoscopes. Please try again later!</div>';
+        return;
+    }
+
+    grid.innerHTML = currentHoroscopes.map(({ sign, message, theme }) => `
                 <div class="horoscope-card" data-sign="${sign}"  id=${sign}>
                     <div class="sign-container">
                         <div class="sign">${sign}</div>
                         <div class="dates-tag">${zodiacDates[sign]}</div>
                         <div class="sign-image">
-                            <img src=" ${zodiacImages[sign] ||'/placeholder/120/120'}" alt="${sign} zodiac sign"/>
+                            <img src=" ${zodiacImages[sign] || '/placeholder/120/120'}" alt="${sign} zodiac sign"/>
                         </div>
                         <div class="theme-tag">${theme}</div>
                     </div>
                     <div class="message">${message}</div>
                 </div>
             `).join('');
+}
+
+async function refreshSelectedHoroscope() {
+    const selectedSign = document.getElementById('signSelect').value;
+    if (!selectedSign) {
+        alert('Please select a zodiac sign');
+        return;
+    }
+
+    const horoscopes = await loadHoroscopes();
+    if (horoscopes.length === 0) return;
+
+    // Get a new random horoscope
+    const date = new Date();
+    const seed = date.getTime(); // Use current timestamp for randomness...
+    const usedMessages = currentHoroscopes
+        .filter(h => h.sign !== selectedSign)
+        .map(h => h.message);
+
+    const newHoroscope = getRandomMessage(horoscopes, usedMessages, seed);
+
+    // Update the selected horoscope card
+    const card = document.querySelector(`.horoscope-card[data-sign="${selectedSign}"]`);
+    if (card) {
+        card.querySelector('.message').textContent = newHoroscope.message;
+        card.querySelector('.theme-tag').textContent = newHoroscope.theme;
+
+        // Update the currentHoroscopes array
+        const index = currentHoroscopes.findIndex(h => h.sign === selectedSign);
+        if (index !== -1) {
+            currentHoroscopes[index] = {
+                ...currentHoroscopes[index],
+                message: newHoroscope.message,
+                theme: newHoroscope.theme
+            };
         }
-
-        async function refreshSelectedHoroscope() {
-            const selectedSign = document.getElementById('signSelect').value;
-            if (!selectedSign) {
-                alert('Please select a zodiac sign');
-                return;
-            }
-
-            const horoscopes = await loadHoroscopes();
-            if (horoscopes.length === 0) return;
-
-            // Get a new random horoscope
-            const date = new Date();
-            const seed = date.getTime(); // Use current timestamp for randomness...
-            const usedMessages = currentHoroscopes
-                .filter(h => h.sign !== selectedSign)
-                .map(h => h.message);
-
-            const newHoroscope = getRandomMessage(horoscopes, usedMessages, seed);
-
-            // Update the selected horoscope card
-            const card = document.querySelector(`.horoscope-card[data-sign="${selectedSign}"]`);
-            if (card) {
-                card.querySelector('.message').textContent = newHoroscope.message;
-                card.querySelector('.theme-tag').textContent = newHoroscope.theme;
-
-                // Update the currentHoroscopes array
-                const index = currentHoroscopes.findIndex(h => h.sign === selectedSign);
-                if (index !== -1) {
-                    currentHoroscopes[index] = {
-                        ...currentHoroscopes[index],
-                        message: newHoroscope.message,
-                        theme: newHoroscope.theme
-                    };
-                }
-            }
-        }
+    }
+}
 
 function updateDate() {
     const date = new Date();
@@ -166,24 +164,23 @@ function updateDate() {
     document.getElementById('currentDate').textContent = `${month} ${day}, ${year}`;
 }
 
+// Initial render
+renderHoroscopes();
+updateCountdown();
+updateDate();
 
-        // Initial render
+// Event listeners
+document.getElementById('refreshButton').addEventListener('click', refreshSelectedHoroscope);
+
+// Previous interval setups remain the same
+setInterval(updateCountdown, 1000);
+setInterval(() => {
+    const now = new Date();
+    if (now.getHours() === 0 && now.getMinutes() === 0 && now.getSeconds() === 0) {
         renderHoroscopes();
-        updateCountdown();
         updateDate();
-
-        // Event listeners
-        document.getElementById('refreshButton').addEventListener('click', refreshSelectedHoroscope);
-
-        // Previous interval setups remain the same
-        setInterval(updateCountdown, 1000);
-        setInterval(() => {
-            const now = new Date();
-            if (now.getHours() === 0 && now.getMinutes() === 0 && now.getSeconds() === 0) {
-                renderHoroscopes();
-                updateDate();
-            }
-        }, 1000);
+    }
+}, 1000);
 
 // Scroll to top button
 let backTo = document.getElementById("backToTop");
@@ -196,5 +193,5 @@ window.onscroll = function () {
 // Scroll to the top when the button is clicked
 backTo.onclick = function () {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-}; 
+};
 
