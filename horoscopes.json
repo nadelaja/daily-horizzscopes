@@ -128,7 +128,7 @@
         },
         {
             "id": 22,
-            "message": "Anxiety is so silly when you really think about it, you're telling me your body can't tell the difference between ordering at a restaurant, and you being robbed at gunpoint. That's rough buddy",
+            "message": "Anxiety is so silly when you really think about it, you're telling me your body can't tell the difference between ordering at a restaurant, and you being robbed at gunpoint. That's rough buddy.",
             "theme": "copium",
             "intensity": "medium"
         },
@@ -192,6 +192,27 @@
             "message": "Daily Affirmations: I'm not chopped. I get hoes. My fits are fire. Money is on the way.",
             "theme": "???",
             "intensity": "high"
+        },
+
+        {
+            "id": 33,
+            "message": "Someone is planning to support you financially. In the next two hours from now, you will receive financial miracle.",
+            "theme": "opportunity",
+            "intensity": "high"
+        },
+
+        {
+            "id": 34,
+            "message": "WE GETTIN' MONEY!!! 🤑",
+            "theme": "opportunity",
+            "intensity": "high"
+        },
+
+        {
+            "id": 35,
+            "message": "(っ °Д °;)っ(っ °Д °;)っ(っ °Д °;)っ",
+            "theme": "???",
+            "intensity": "medium"
         }
     ]
 }
