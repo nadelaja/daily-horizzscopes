@@ -213,6 +213,15 @@
             "message": "(っ °Д °;)っ(っ °Д °;)っ(っ °Д °;)っ",
             "theme": "???",
             "intensity": "medium"
+        },
+
+        {
+            "id": 36,
+            "message": "안녕하세요, a large size amount of money is coming your way!",
+            "theme": "money",
+            "intensity": "high"
         }
     ]
 }
+
+
